@@ -12,6 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Login Dockerhub
       env:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
@@ -19,6 +20,7 @@ jobs:
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
     - name: Build the Docker image
-      run: docker build -t go-books-api .
+      run: docker build -t $DOCKER_USERNAME/go-books-api:latest .
+
     - name: Push to Dockerhub
-      run: docker push pratyushkumarsingh05/go-books-api:latest
+      run: docker push $DOCKER_USERNAME/go-books-api:latest
