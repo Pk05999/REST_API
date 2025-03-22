@@ -107,8 +107,6 @@ func main() {
 
 
 	fmt.Println("server running....") 
-
-
 	log.Fatal(http.ListenAndServe(":8080", r)) //log.fatal is used to throw the error
 
 }
