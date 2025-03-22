@@ -105,6 +105,7 @@ func main() {
 	r.HandleFunc("/api/books/{id}", updateBook).Methods("PUT")
 	r.HandleFunc("/api/books/{id}", deleteBook).Methods("DELETE")
 
+	
 	fmt.Println("server running....") 
 
 	log.Fatal(http.ListenAndServe(":8080", r)) //log.fatal is used to throw the error
